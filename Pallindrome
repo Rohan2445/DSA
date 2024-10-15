@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int numbers[5];
+
+    for (int i = 0; i < 5; i++) {
+        cout << "Enter integer " << i + 1 << ": ";
+        cin >> numbers[i];
+    }
+
+    bool is_palindrome = true;
+
+    for (int i = 0; i < 5 / 2; i++) {
+        if (numbers[i] != numbers[4 - i]) {
+            is_palindrome = false;
+            break;
+        }
+    }
+
+    if (is_palindrome) {
+        cout << "The array is in palindrome order." << endl;
+    } else {
+        cout << "The array is not in palindrome order." << endl;
+    }
+
+    return 0;
+}
